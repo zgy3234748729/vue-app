@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" style="height: 100px; width: 100px; border: 2px red solid">
+        <button id="child" value="按钮">按钮</button>
+        <div id="childDiv" style="height: 60px; width: 60px; background-color: yellow;"></div>
+        <a href="https://www.baidu.com">百度一下</a>    
+    </div>
+
+    <script>
+        const parent = document.getElementById('parent')
+        const child = document.getElementById('child')
+        const childDiv = document.getElementById('childDiv')
+
+
+        parent.addEventListener('click', () => {
+            console.log("parent")
+        })
+
+        child.addEventListener('click', (e) => {
+            console.log("child")
+            e.stopPropagation()
+        })
+
+        childDiv.addEventListener('click', () => {
+            console.log("childDiv")
+        })
+    </script>
+</body>
+</html>
